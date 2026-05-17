@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'todo_list.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'data', 'db.sqlite3'),
     }
 }
 
@@ -121,3 +121,7 @@ LOGIN_URL = 'login'
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.hostanywhere.io',
+]

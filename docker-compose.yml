@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  todolist:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - todolist_data:/app/data
+    environment:
+      - DEBUG=True
+    command: gunicorn --bind 0.0.0.0:8000 todo_list.wsgi
+
+volumes:
+  todolist_data:
